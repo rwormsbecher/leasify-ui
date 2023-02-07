@@ -1,23 +1,42 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Button from "./Button";
+import React from "react";
+
+import { Button, ButtonHorizontalPositionEnum, ButtonSizesEnum, ButtonTypesEnum } from "./Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "ReactComponentLibrary/Button",
+    title: "Example/Buttons",
     component: Button,
+    argTypes: {
+        size: { control: { type: "select", option: ["Small", "Medium", "Large"] } },
+        alignX: { control: { type: "select", option: ["Left", "Center"] } },
+        onClick: { action: "click" },
+    },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+    <Button {...args}>
+        <span>Hallo</span>
+    </Button>
+);
 
-export const HelloWorld = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-HelloWorld.args = {
-    label: "Hello world!",
+const TemplateSecondary: ComponentStory<typeof Button> = (args) => (
+    <Button {...args}>
+        <span>Hallo</span>
+    </Button>
+);
+
+// export const PrimaryButton = (args: any) => <PrimaryButtonDemo {...args}>test</PrimaryButtonDemo>;
+
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = {
+    size: ButtonSizesEnum.Medium,
+    alignX: ButtonHorizontalPositionEnum.Center,
 };
 
-export const ClickMe = Template.bind({});
-ClickMe.args = {
-    label: "Click me!",
+export const SecondaryButton = TemplateSecondary.bind({});
+SecondaryButton.args = {
+    size: ButtonSizesEnum.Medium,
+    alignX: ButtonHorizontalPositionEnum.Center,
+    buttonType: ButtonTypesEnum.Secondary,
 };
