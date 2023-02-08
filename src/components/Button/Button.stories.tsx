@@ -5,7 +5,7 @@ import { Button, ButtonHorizontalPositionEnum, ButtonSizesEnum, ButtonTypesEnum 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "Example/Buttons",
+    title: "leasify/Buttons",
     component: Button,
     argTypes: {
         size: { control: { type: "select", option: ["Small", "Medium", "Large"] } },
