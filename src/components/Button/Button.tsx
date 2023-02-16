@@ -3,24 +3,6 @@ import styled, { css, ThemeProvider } from "styled-components";
 import { generalTheme } from "../../themes/generalTheme";
 import { screenSize } from "../../themes/global";
 
-// export const Button = styled.input.attrs<submitButtonProps>(({ customText }) => ({
-//     type: "submit",
-//     value: customText,
-// }))<submitButtonProps>`
-//     padding: 4px 64px;
-//     background-color: ${(p) => p.theme.primaryColor};
-//     color: white;
-//     outline: none;
-//     border: none;
-//     font-size: 14px;
-//     margin-top: 16px;
-
-//     &:disabled {
-//         border: 1px solid #999999;
-//         background-color: #cccccc;
-//         color: #666666;
-//     }
-// `;
 export enum ButtonTypesEnum {
     Primary = "Primary",
     Secondary = "Secondary",
@@ -113,7 +95,6 @@ export const Button: React.FC<IButtonProps> = ({
     children,
     ...props
 }) => {
-    console.log(props);
     return (
         <ThemeProvider theme={generalTheme}>
             <LeasifyButton alignX={alignX} size={size} buttonType={buttonType} {...props}>
