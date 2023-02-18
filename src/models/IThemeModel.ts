@@ -1,4 +1,5 @@
 export interface IThemeModel {
+    primaryColor200: string;
     primaryColor300: string;
     primaryColor500: string;
 
@@ -6,4 +7,8 @@ export interface IThemeModel {
     secondaryColor700: string;
 
     secondaryTextcolor: string;
+
+    textColor300: string;
+    textColor500: string;
+    textColor700: string;
 }
